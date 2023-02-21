@@ -4,6 +4,7 @@
   "description": "Node backend w/ Express, Faker and MySQL.",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
