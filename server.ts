@@ -2,6 +2,8 @@ import express, { Request, Response } from "express";
 import { faker } from "@faker-js/faker";
 import mysql from "mysql";
 
+const app = express();
+
 interface Post {
   id: number;
   title: string;
@@ -10,14 +12,12 @@ interface Post {
   createdAt: Date;
 }
 
-const app = express();
-
 // Create a MySQL connection
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "password",
-  database: "myblog",
+  database: "blog",
 });
 
 connection.connect((err) => {
@@ -38,7 +38,7 @@ const generatePosts = (count: number): Post[] => {
       id: i + 1,
       title: faker.lorem.sentence(),
       body: faker.lorem.paragraph(),
-      author: faker.name.findName(),
+      author: faker.name.fullName(),
       createdAt: new Date(),
     };
 
@@ -81,12 +81,12 @@ const getPosts = (callback: (posts: Post[]) => void): void => {
       return;
     }
 
-    const posts = rows.map((row) => ({
+    const posts = rows.map((row: Post) => ({
       id: row.id,
       title: row.title,
       body: row.body,
       author: row.author,
-      createdAt: row.created_at,
+      createdAt: row.createdAt,
     }));
 
     callback(posts);
