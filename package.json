@@ -1,0 +1,31 @@
+{
+  "name": "posting",
+  "version": "1.0.0",
+  "description": "Node backend w/ Express, Faker and MySQL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joziasmartini/posting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joziasmartini/posting/issues"
+  },
+  "homepage": "https://github.com/joziasmartini/posting#readme",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/mysql": "^2.15.21",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
